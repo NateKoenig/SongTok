@@ -1,0 +1,70 @@
+<head>
+	<title>SongTok</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>::-webkit-input-placeholder{text-align:center}:-moz-placeholder{text-align:center}::-moz-placeholder{text-align:center}:-ms-input-placeholder{text-align:center}body{font-size:16px}.header{text-align:center;font-family:TimesNewRoman;font-size:50px;color:#2E2EFE}#downloadVideo{font-size:24px;margin-top:2%}.content{padding-top:5%}.footer{background-color:#000;padding:1.5rem 0;word-spacing:10px;color:#FF0000;left:0;right:0;bottom:0;position:fixed}.fa{color:#FF0000}input{text-align:center}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			SongTok
+		</div>
+		<div class="row content">
+			<div class="col-sm-12">
+				<div class="input-group">
+				   <input type="text" id="postUrl" class="form-control" placeholder="Instagram Post URL" value="Enter TikTok link"/>
+				   <span class="input-group-btn">
+						<button class="btn btn-danger" type="button" id="getMedia">Find song</button>
+				   </span>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-8 col-md-offset-2">
+				<div id="media" class="text-center"></div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-7 text-right">
+					&copy;2021
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// js handles getting url and using AudD API to find what song it is
+		$("#getMedia").click(getMedia);
+		var render = document.querySelector("#media");
+
+		function findSong(input_url) {
+			// from AudD website (docs)
+			// requires jQuery <-- What does this mean??
+			// line 57 had: 'https://audd.tech/example1.mp3', do we need an mp3? If so, convert from mp4 to mp3
+			var data = {
+	    		'api_token': '4d50671c81da7437891a11846780852b',
+	    		'url': 'input_url',
+	    		'return': 'apple_music,spotify',
+			};
+			$.getJSON("https://api.audd.io/?jsonp=?", data, function(result){
+	    		console.log(result);
+			});
+		}
+
+		function getMedia() {
+			var url = $("#postUrl").val();
+			if (url) {
+				findSong(url);
+			} 
+			else {
+				document.querySelector("#media").setAttribute("placeholder", "Invalid Address, Please Enter Proper TikTok Link");
+			}
+		}
+	</script>
+</body>
