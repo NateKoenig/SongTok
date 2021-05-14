@@ -37,16 +37,17 @@
 			</div>
 		</div>
 	</footer>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<script>
 		// js handles getting url and using AudD API to find what song it is
 		$("#getMedia").click(getMedia);
 		var render = document.querySelector("#media");
 
 		function findSong(input_url) {
 			// from AudD website (docs)
-			// requires jQuery <-- What does this mean??
-			// line 57 had: 'https://audd.tech/example1.mp3', do we need an mp3? If so, convert from mp4 to mp3
+			// line 63 had: 'https://audd.tech/example1.mp3', do we need an mp3? If so, convert from mp4 to mp3
 			var data = {
 	    		'api_token': '4d50671c81da7437891a11846780852b',
 	    		'url': 'input_url',
