@@ -55,6 +55,16 @@
 			$.getJSON("https://api.audd.io/?jsonp=?", data, function(result){
 	    		console.log(result);
 			});
+
+			//output --> TODO: Figure out how to actually output that image
+			var song;
+			console.log(song.artistName);
+			var img = document.createElement("img");
+			img.src = song.artwork.url;
+			img.width = song.artwork.width;
+			img.height = song.artwork.height;
+
+			console.log("Listen to the song on Apple Music: ", song.url);
 		}
 
 		function getMedia() {
