@@ -1,0 +1,4 @@
+body {
+	background-image: url("{{ url_for('static', filename='fakurian-design-PGdW_bHDbpI-unsplash_copy.jpg') }}");
+	background-size: cover;
+}

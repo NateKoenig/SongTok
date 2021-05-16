@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>SongTok</title>
+		<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+	</head>
+
+	<body>
+		<div class="header">
+			<img src="{{ url_for('static', filename='IMG_4464_copy.jpg') }}" class="center" width = "450" height = "450" alt="SongTok">
+			<style>
+				img {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			</style>
+		</div>
+
+		<style>
+			body {
+				background-image: url("{{ url_for('static', filename='fakurian-design-PGdW_bHDbpI-unsplash_copy.jpg') }}");
+				background-size: cover;;
+			}
+		</style>
+
+		<form action="#" method="post">
+			<p>Enter TikTok URL below!</p>
+			<p><input type="text" name="link" /></p>
+			<p><input type="submit" value="Get Song"/></p>
+		</form>
+
+		<style>
+			form {
+				text-align: center;
+				font-size: 30px;
+			}
+			input[type="text"] {
+				width: 400px;
+				height: 25px;
+			}
+			input[type="submit"] {
+				width: 200px;
+			}
+		</style>
+	</body>
+</html>
