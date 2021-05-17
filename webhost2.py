@@ -51,16 +51,16 @@ if __name__ == "__main__":
 
 
 #Code to download tik toks
-did=''.join(random.choice(string.digits) for num in range(19))
-verifyFp="verify_kon4ht8t_cXlUzSMR_D9IQ_4viA_BfCh_Z6QwNIYLNtIf"
+# did=''.join(random.choice(string.digits) for num in range(19))
+# verifyFp="verify_kon4ht8t_cXlUzSMR_D9IQ_4viA_BfCh_Z6QwNIYLNtIf"
 #api = TikTokApi.get_instance(custom_verifyFp=verifyFp, custom_did=did)
-api = TikTokApi.get_instance(custom_verifyFp=verifyFp, use_test_endpoints=True)
-print(api.trending())
+# api = TikTokApi.get_instance(custom_verifyFp=verifyFp, use_test_endpoints=True)
+# print(api.trending())
 
-from pathlib import Path
-Path("downloads").mkdir(exist_ok=True) # creates folder
-for i in range(len(tiktoks)):
-    data = api.get_Video_By_TikTok(tiktoks[i])# bytes of the video
-    with open("downloads/{}.mp4".format(str(i)), 'wb') as output:
-        output.write(data) # saves data to the mp4 file
+# from pathlib import Path
+# Path("downloads").mkdir(exist_ok=True) # creates folder
+# for i in range(len(tiktoks)):
+    # data = api.get_Video_By_TikTok(tiktoks[i])# bytes of the video
+    # with open("downloads/{}.mp4".format(str(i)), 'wb') as output:
+        # output.write(data) # saves data to the mp4 file
 
