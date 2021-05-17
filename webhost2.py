@@ -64,3 +64,9 @@ if __name__ == "__main__":
     # with open("downloads/{}.mp4".format(str(i)), 'wb') as output:
         # output.write(data) # saves data to the mp4 file
 
+
+#Helpful reads:
+#https://medium.com/analytics-vidhya/download-tiktoks-with-python-dcbd79a5237f
+#https://www.youtube.com/watch?v=zwLmLfVI-VQ
+#https://yanwei-liu.medium.com/how-to-use-ffmpeg-on-python-2ba3fa360ba7
+#https://docs.audd.io
